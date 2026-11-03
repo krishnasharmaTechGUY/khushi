@@ -1,10 +1,43 @@
-import React, { useEffect, useRef } from 'react'
-import orihime from '../assets/orihime.jpg'
+import React, { useEffect, useRef, useState } from 'react'
+import orihime from '../assets/download.jpeg'
 import { GiCrossMark } from 'react-icons/gi'
 
 const BookCanvas = ({ active, setActive }) => {
 
     const dropdownRef = useRef(null)
+    const [currentPage, setCurrentPage] = useState(0)
+    const pages = [
+        {
+            title: 'A little note',
+            content: (
+                <article>Happy Birthday, Khushi ❤️</article>
+            ),
+        },
+        {
+            title: 'Something special',
+            content: (
+                <article>It's funny how some people become a little special in our lives without even trying. Sometimes, it's the little conversations, random moments, or simply having them around that make a difference. I'm genuinely glad I got to know you. There's something about your presence that makes ordinary days feel a little nicer, and I hope you never lose that part of yourself.</article>
+            ),
+        },
+        {
+            title: 'Wishing you happiness',
+            content: (
+                <article>On your birthday, I just want to wish you all the happiness you deserve. I hope life brings you beautiful surprises, gives you strength when things get difficult, and takes you closer to everything you've been hoping for. Keep chasing the things that make you happy, keep smiling through the little things, and never let the difficult days make you forget how much good there is waiting for you.</article>
+            ),
+        },
+        {
+            title: 'A new year',
+            content: (
+                <article>And as another year begins, I hope it brings you moments you'll look back on with a smile, people who make life feel lighter, and memories that stay with you for a long time. I may not always have the perfect words to express it, but I'm genuinely happy that our paths crossed.</article>
+            ),
+        },
+        {
+            title: 'With warm wishes',
+            content: (
+                <article>Have the most beautiful birthday, Khushi. You deserve it. ❤️</article>
+            ),
+        },
+    ]
     const handleClickOutside = (event) => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
             setActive(true)
@@ -29,7 +62,7 @@ const BookCanvas = ({ active, setActive }) => {
                 <div className="card1">
                     <div className="cover-text-wrapper">
                         <h4 className="username">
-                            Dear Trishaa<span className="underline"></span>
+                            Dear Khushi<span className="underline"></span>
                         </h4>
                         <h3 className="cover-title">
                             Happy Birthday!
@@ -63,16 +96,29 @@ const BookCanvas = ({ active, setActive }) => {
                 <div className="card2">
                     <div className="card2-content">
                         <h3 className="card2-recipient">
-                            To You!
+                            {pages[currentPage].title}
                         </h3>
 
-                        {/* Swapping back to H2 to match the original CSS targeting */}
                         <div className="card2-message-text italic">
-                            <article style={{ marginBottom: '8px' }}>Happy Birthday, Trishaa ❤️</article>
-                            <article style={{ marginBottom: '10px' }}>From the moment we met, something in my life shifted—like the universe quietly guiding me toward someone meant for me.You brought warmth into the parts of me I didn’t even know were cold, And you expanded my days with a dimension I can only call my own.</article>
-                            <article style={{ marginBottom: '10px' }}>On your birthday, I just want you to know this: I want you with me in every chapter, every storm, every sunshine, every tomorrow. No matter what comes, I’ll be on your side—always. I’ll choose you, protect you, stand with you, and love you in ways that remind you you’re never alone.</article>
-                            <article style={{ marginBottom: '10px' }}>You’re not just another year older today… <br />
-                                you’re the reason my life feels softer, brighter, and endlessly worth living. Happy Birthday.</article>
+                            {pages[currentPage].content}
+                        </div>
+
+                        <div className="book-page-controls">
+                            <button
+                                type="button"
+                                onClick={() => setCurrentPage((page) => Math.max(page - 1, 0))}
+                                disabled={currentPage === 0}
+                            >
+                                ← Previous
+                            </button>
+                            <span>Page {currentPage + 1} of {pages.length}</span>
+                            <button
+                                type="button"
+                                onClick={() => setCurrentPage((page) => Math.min(page + 1, pages.length - 1))}
+                                disabled={currentPage === pages.length - 1}
+                            >
+                                Next →
+                            </button>
                         </div>
 
                         <div className="card2-decoration"></div> {/* Decoration */}
@@ -91,7 +137,7 @@ const BookCanvas = ({ active, setActive }) => {
                         <div className="confetti-dots"></div>
 
                         <p className="signature">
-                            Your Best Friend, Mico
+                             Krishna
                         </p>
                     </div>
                 </div>

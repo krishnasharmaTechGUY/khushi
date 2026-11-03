@@ -39,6 +39,19 @@ The app will start locally (typically at `http://localhost:5173`).
 
 ---
 
+## 🚀 Deploy to GitHub Pages
+
+1. Push this project to a GitHub repository using the `main` branch.
+2. In the repository, open **Settings → Pages**.
+3. Under **Build and deployment**, select **GitHub Actions** as the source.
+4. Push to `main` (or run **Deploy to GitHub Pages** from the Actions tab).
+
+The workflow in `.github/workflows/deploy.yml` builds the app and publishes the `dist` folder automatically. The deployed site will be available at:
+
+`https://<your-username>.github.io/<repository-name>/`
+
+---
+
 ## 🛠️ How to Customize
 
 1. **Names & Date:** Update names and birth date in `src/pages/Home.jsx`, `src/pages/LoveLetter.jsx`, `src/components/OpeningAnimation.jsx`, and `src/components/BookCanvas.jsx`.

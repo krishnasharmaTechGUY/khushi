@@ -374,6 +374,45 @@
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
+.boxMail .boxMail-container .card2 .card2-message-text article {
+    margin-bottom: 14px;
+}
+
+.boxMail .boxMail-container .card2 .book-page-controls {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.boxMail .boxMail-container .card2 .book-page-controls button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    padding: 6px 10px;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.boxMail .boxMail-container .card2 .book-page-controls button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.boxMail .boxMail-container .card2 .book-page-controls button:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.boxMail .boxMail-container .card2 .book-page-controls span {
+    font-size: 13px;
+    white-space: nowrap;
+}
+
 .boxMail .boxMail-container .card2 .signature {
     font-family: 'Dancing Script', cursive;
     font-size: 26px;

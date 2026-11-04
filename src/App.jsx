@@ -11,15 +11,18 @@ import OpeningAnimation from './components/OpeningAnimation'
 
 const App = () => {
 
-  const MyRoute = createBrowserRouter(createRoutesFromElements(
-    <Route>
-      <Route path='/' element={<Layout />}>
-        <Route index element={<Home />}></Route>
-        <Route path='love-Letter' element={<LoveLetter />}></Route>
-        <Route path='test' element={<Test />}></Route>
+    const MyRoute = createBrowserRouter(
+    createRoutesFromElements(
+      <Route>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />}></Route>
+          <Route path='love-Letter' element={<LoveLetter />}></Route>
+          <Route path='test' element={<Test />}></Route>
+        </Route>
       </Route>
-    </Route>
-  ))
+    ),
+    { basename: '/khushi' }
+  )
 
 
   // ------------------Cake loader 

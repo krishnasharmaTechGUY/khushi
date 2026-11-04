@@ -47,10 +47,6 @@ The app will start locally (typically at `http://localhost:5173`).
 
 ---
 
-## 💖 Credits & Acknowledgments
-
-- **Edited by:** **HXNI**
-- Built with React, Vite, Tailwind CSS, and CSS3 Animations.
 
 ---
 
